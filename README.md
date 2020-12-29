@@ -1,0 +1,1 @@
+# nuxt-posts-app
