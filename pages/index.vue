@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import PostPreview from "@/components/PostPreview";
+import PostPreview from "@/components/Post/PostPreview";
 export default {
   components: {PostPreview}
 }
