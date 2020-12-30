@@ -36,9 +36,8 @@ html {
 }
 
 .column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
+  width: 25%;
+  margin: auto;                                                           ;
   padding: 0 8px;
 }
 
@@ -49,6 +48,7 @@ html {
 
 .container {
   padding: 0 16px;
+  padding-right: 32px;
 }
 
 .container::after, .row::after {
@@ -75,10 +75,6 @@ html {
 
 .button:hover {
   background-color: #555;
-}
-.container h2, .container p {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 @media screen and (max-width: 650px) {
   .column {

@@ -32,7 +32,4 @@ html {
   background-color: #474e5d;
   color: white;
 }
-.about-section  h1, .about-section  p{
-  padding-bottom: 20px;
-}
 </style>
