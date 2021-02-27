@@ -1,5 +1,5 @@
 <template>
-  <div class="img" :style="{height:'160px'}">
+  <div class="img" :style="{height:'160px', marginBottom: '20px'}">
     <nuxt-link :to="postLink">
       <article>
         <h3>{{ title }}</h3>

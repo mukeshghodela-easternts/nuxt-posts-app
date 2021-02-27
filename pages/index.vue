@@ -11,30 +11,7 @@
       <div class="side">
         <h2>Featured Posts</h2>
         <p>All featured posts goes here</p>
-        <PostPreview
-          id="1"
-          thumbnail="http://www.freedigitalphotos.net/images/previews/twilight-at-musi-ii-bridge-100668224.jpg"
-          title="Post Title 1"
-          preview-text="Preview Text 1"
-        ></PostPreview><br/>
-        <PostPreview
-          id="2"
-          thumbnail="http://www.freedigitalphotos.net/images/previews/twilight-at-musi-ii-bridge-100668224.jpg"
-          title="Post Title 2"
-          preview-text="Preview Text 2"
-        ></PostPreview><br/>
-        <PostPreview
-          id="3"
-          thumbnail="http://www.freedigitalphotos.net/images/previews/twilight-at-musi-ii-bridge-100668224.jpg"
-          title="Post Title 3"
-          preview-text="Preview Text 3"
-        ></PostPreview><br/>
-        <PostPreview
-          id="4"
-          thumbnail="http://www.freedigitalphotos.net/images/previews/twilight-at-musi-ii-bridge-100668224.jpg"
-          title="Post Title 4"
-          preview-text="Preview Text 4"
-        ></PostPreview><br/>
+      <PostList :posts="loadedPosts" />
       </div>
       <div class="main">
         <h2>TITLE HEADING</h2>
@@ -58,9 +35,32 @@
 </template>
 
 <script>
-import PostPreview from "@/components/Post/PostPreview";
+import PostList from "@/components/Post/PostList";
 export default {
-  components: {PostPreview}
+  components: {PostList},
+   asyncData(context, callback) {
+     console.log('Executed');
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: "1",
+            title: "First Post",
+            previewText: "This is our first post!",
+            thumbnail:
+              "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
+          },
+          {
+            id: "2",
+            title: "Second Post",
+            previewText: "This is our second post!",
+            thumbnail:
+              "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
+          }
+        ]
+      });
+    }, 1500);
+  },
 }
 </script>
 
