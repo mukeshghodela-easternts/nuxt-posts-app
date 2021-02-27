@@ -38,7 +38,7 @@
 import PostList from "@/components/Post/PostList";
 export default {
   components: {PostList},
-   async asyncData(context,) {
+   asyncData(context,) {
      console.log('Executed');
         const loadedPosts = [
           {

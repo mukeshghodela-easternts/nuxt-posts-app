@@ -27,10 +27,9 @@
 import PostList from "@/components/Post/PostList";
 export default {
   components: {PostList},
-  async asyncData(context) {
-     console.log('Posts Page Executed');
-
-        return {loadedPosts: [
+  fetch(context) {
+  
+        let data = [
           {
             id: "1",
             title: "First Post",
@@ -45,8 +44,19 @@ export default {
             thumbnail:
               "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
           }
-        ]}
+        ]
+      
+        context.store.dispatch('posts/setPosts', data)
   
+  },
+  created() {
+    // this.$store.dispatch('posts/setPosts', this.loadedPosts);
+    // console.log(this.$store.getters['posts/loadedPosts']);
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters['posts/loadedPosts'];
+    }
   },
 }
 </script>
