@@ -27,28 +27,6 @@
 import PostList from "@/components/Post/PostList";
 export default {
   components: {PostList},
-  fetch(context) {
-  
-        let data = [
-          {
-            id: "1",
-            title: "First Post",
-            previewText: "This is our first post!",
-            thumbnail:
-              "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
-          },
-          {
-            id: "2",
-            title: "Second Post",
-            previewText: "This is our second post!",
-            thumbnail:
-              "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
-          }
-        ]
-      
-        context.store.dispatch('posts/setPosts', data)
-  
-  },
   created() {
     // this.$store.dispatch('posts/setPosts', this.loadedPosts);
     // console.log(this.$store.getters['posts/loadedPosts']);
