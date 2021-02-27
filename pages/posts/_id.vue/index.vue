@@ -23,7 +23,9 @@ export default {
   asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
     // const loadedPost = await $http.$get(`https://api.nuxtjs.dev/posts/${params.id}`);
     // return { loadedPost }
-      return {loadedPost: {
+
+    return new Promise((resolve, reject ) => {
+      resolve({loadedPost: {
         id: "1",
         author: "Mukesh Ghodela (ID: "+ params.id +")",
         title: "CEO & Founder ",
@@ -32,7 +34,22 @@ export default {
         conten: "Lets add some summy content",
         previewText: "This is our preview text",
         updatedDate: (new Date()).toLocaleString(),
-      }}
+      }})
+      // reject(new Error())
+    }).then(data => data)
+    .catch(e => {
+      error(e)
+    })
+      // return {loadedPost: {
+      //   id: "1",
+      //   author: "Mukesh Ghodela (ID: "+ params.id +")",
+      //   title: "CEO & Founder ",
+      //   thumbnail: "https://www.w3schools.com/w3images/man_smoke.jpg",
+      //   email: "mukesh.easternts@gmail.com",
+      //   conten: "Lets add some summy content",
+      //   previewText: "This is our preview text",
+      //   updatedDate: (new Date()).toLocaleString(),
+      // }}
     
   },
 }
