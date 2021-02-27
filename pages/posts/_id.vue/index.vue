@@ -2,12 +2,14 @@
   <div class="row">
     <div class="column">
       <div class="card">
-        <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:100%">
+        <img :src="loadedPost.thumbnail" alt="Jane" style="width:100%">
         <div class="container">
-          <h2>Jane Doe</h2>
-          <p class="title">CEO & Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p><a href="mailto:jane@example.com">jane@example.com</a></p>
+          <h2>{{loadedPost.author}}</h2>
+          <p class="title">{{loadedPost.title}}</p>
+          <p>Last updated on {{loadedPost.updatedDate}}</p>
+          <p>{{loadedPost.previewText}}</p>
+          <p>{{loadedPost.content}}</p>
+          <p><a :href="`mailto:${loadedPost.email}`">{{loadedPost.email}}</a></p>
           <p><button class="button">Contact</button></p>
         </div>
       </div>
@@ -17,7 +19,22 @@
 
 <script>
 export default {
-  name: "index.vue"
+  name: "index.vue",
+  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+    // const loadedPost = await $http.$get(`https://api.nuxtjs.dev/posts/${params.id}`);
+    // return { loadedPost }
+      return {loadedPost: {
+        id: "1",
+        author: "Mukesh Ghodela (ID: "+ params.id +")",
+        title: "CEO & Founder ",
+        thumbnail: "https://www.w3schools.com/w3images/man_smoke.jpg",
+        email: "mukesh.easternts@gmail.com",
+        conten: "Lets add some summy content",
+        previewText: "This is our preview text",
+        updatedDate: (new Date()).toLocaleString(),
+      }}
+    
+  },
 }
 </script>
 

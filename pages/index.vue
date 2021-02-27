@@ -38,11 +38,9 @@
 import PostList from "@/components/Post/PostList";
 export default {
   components: {PostList},
-   asyncData(context, callback) {
+   async asyncData(context,) {
      console.log('Executed');
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: [
+        const loadedPosts = [
           {
             id: "1",
             title: "First Post",
@@ -57,9 +55,9 @@ export default {
             thumbnail:
               "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
           }
-        ]
-      });
-    }, 1500);
+        ];
+        return {loadedPosts}
+
   },
 }
 </script>
