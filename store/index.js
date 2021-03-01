@@ -11,8 +11,8 @@ export const actions = {
         }
         commit('posts/setPosts', postsArray, { root: true });
 
-        if(!process.client) {
-            console.log("CLIENT_RENDERING");
-        }
+        // if(!process.client) {
+        //     console.log("CLIENT_RENDERING");
+        // }
     }
 }

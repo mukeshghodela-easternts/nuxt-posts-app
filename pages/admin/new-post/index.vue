@@ -14,10 +14,13 @@ export default {
   layout: "admin",
   methods: {
     handleOnSubmit(postData) {
-      this.$axios
-        .$post("/posts.json", {...postData, updatedDate: (new Date()).toLocaleString()})
+      this.$store
+        .dispatch("posts/addPost", {
+          ...postData,
+          updatedDate: new Date().toLocaleString(),
+        })
         .then((res) => {
-          this.$router.push('/admin')
+          this.$router.push("/admin");
           console.log(res);
         })
         .catch((e) => console.log(e));
