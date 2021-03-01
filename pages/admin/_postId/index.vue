@@ -12,15 +12,12 @@ export default {
   name: "index.vue",
   layout: 'admin',
   components: {AdminPostForm},
-  data() {
-    return {
-      loadedPost: {
-        author: "Mukesh",
-        title: "My First Post",
-        thumbnailLink: "~assets/images/img_1.png",
-        content: "This is my first post"
-      }
-    }
+  async asyncData({isDev, route, store, env, params, query, req, res, redirect, error, $axios}) {
+    return await $axios.$get(`/posts/${params.postId}.json`).then(res => {
+      return {loadedPost: res}
+    }).catch(e => {
+      error(e)
+    });
   }
 }
 </script>

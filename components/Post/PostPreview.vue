@@ -1,5 +1,5 @@
 <template>
-  <div class="img" :style="{height:'160px', marginBottom: '20px'}">
+  <div class="img" :style="{height:'160px', marginBottom: '20px', width: isAdmin ? '25%' : '90%', 'background-image': 'url('+thumbnail+')'}">
     <nuxt-link :to="postLink">
       <article>
         <h3>{{ title }}</h3>
@@ -44,7 +44,8 @@ export default {
 
 <style scoped>
 .img {
-  background-image: url("~assets/images/img.png");
+  /* background-image: url("~assets/images/img.png"); */
   padding: 20px;
+  margin: 0 auto;
 }
 </style>

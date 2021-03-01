@@ -41,5 +41,14 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+   /*
+   ** Runtime Config
+   */
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
+    }
+  },
 }
