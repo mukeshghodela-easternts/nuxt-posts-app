@@ -16,7 +16,6 @@ const months = [
 ];
 
 const dateFilter = value => {
-  console.log(value);
   return formatDate(value);
 };
 

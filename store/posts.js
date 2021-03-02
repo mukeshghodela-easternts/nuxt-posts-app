@@ -11,10 +11,13 @@ export const mutations = {
     },
     editPost(state, payload) {
         var foundIndex = state.loadedPosts.findIndex(x => x.id == payload.id);
-  
+
         if (foundIndex !== -1) {
             state.loadedPosts[foundIndex] = payload;
         }
+    },
+    authenticateUser(state, payload) {
+
     }
 }
 
@@ -24,17 +27,17 @@ export const actions = {
     },
     addPost({ commit }, post) {
         return this.$axios.$post("/posts.json", post)
-        .then((res) => {
-          commit('addPost', {...post, id: res.name});
-        })
-        .catch((e) => console.log(e));
+            .then((res) => {
+                commit('addPost', { ...post, id: res.name });
+            })
+            .catch((e) => console.log(e));
     },
     editPost({ commit }, post) {
         return this.$axios.$put(`/posts/${post.id}.json`, post)
-        .then((res) => {
-          commit('editPost', post);
-        })
-        .catch((e) => console.log(e));
+            .then((res) => {
+                commit('editPost', post);
+            })
+            .catch((e) => console.log(e));
     },
 }
 

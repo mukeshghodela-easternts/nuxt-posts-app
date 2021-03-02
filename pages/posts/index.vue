@@ -25,6 +25,7 @@
 
 <script>
 export default {
+  // middleware: 'log',
   created() {
     // this.$store.dispatch('posts/setPosts', this.loadedPosts);
     // console.log(this.$store.getters['posts/loadedPosts']);

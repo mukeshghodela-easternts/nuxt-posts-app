@@ -9,19 +9,21 @@
 import TheHeader from "@/components/navigation/TheHeader";
 import TheSidenav from "@/components/navigation/TheSidenav";
 export default {
-components: {
-  TheSidenav,
-  TheHeader
-}, data(){
-    return{
+  middleware: "log",
+  components: {
+    TheSidenav,
+    TheHeader,
+  },
+  data() {
+    return {
       displaySideNav: false,
-    }
-  }
-}
+    };
+  },
+};
 </script>
 <style>
 html {
-  font-family: 'Langar', cursive;
+  font-family: "Langar", cursive;
 }
 body {
   margin: 0;

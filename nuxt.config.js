@@ -64,10 +64,14 @@ export default {
     // }
   },
   env: {
-    MODE: process.env.NODE_ENV !== 'production' ? 'TEST' : 'LIVE'
+    MODE: process.env.NODE_ENV !== 'production' ? 'TEST' : 'LIVE',
+    FIREBASE_API_KEY: 'AIzaSyA6f2-ID576TJnZP1zkCf3caG9p96ySXwg',
   },
   transition: {
     name: 'fade',
     mode: 'out-in'
+  },
+  router: {
+    middleware: 'log'
   }
 }
