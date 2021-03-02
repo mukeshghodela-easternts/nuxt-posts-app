@@ -6,7 +6,7 @@
         <div class="container">
           <h2>{{loadedPost.author}}</h2>
           <p class="title">{{loadedPost.title}}</p>
-          <p>Last updated on {{loadedPost.updatedDate}}</p>
+          <p>Last updated on {{loadedPost.updatedDate | date}}</p>
           <p>{{loadedPost.previewText}}</p>
           <p>{{loadedPost.content}}</p>
           <p><a :href="`mailto:${loadedPost.email}`">{{loadedPost.email}}</a></p>

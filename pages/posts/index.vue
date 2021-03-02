@@ -24,9 +24,7 @@
 </template>
 
 <script>
-import PostList from "@/components/Post/PostList";
 export default {
-  components: {PostList},
   created() {
     // this.$store.dispatch('posts/setPosts', this.loadedPosts);
     // console.log(this.$store.getters['posts/loadedPosts']);

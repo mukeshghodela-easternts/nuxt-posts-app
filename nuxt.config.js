@@ -27,6 +27,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -45,7 +47,9 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -55,9 +59,9 @@ export default {
    */
 
   publicRuntimeConfig: {
-    axios: {
-      baseURL: 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
-    }
+    // axios: {
+    //   baseURL: 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
+    // }
   },
   env: {
     MODE: process.env.NODE_ENV !== 'production' ? 'TEST' : 'LIVE'

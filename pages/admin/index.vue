@@ -12,16 +12,10 @@
 </template>
 
 <script>
-import PostList from "@/components/Post/PostList";
-import AppButton from "@/components/UI/AppButton";
 
 export default {
   name: "index",
   layout: 'admin',
-  components: {
-    AppButton,
-    PostList,
-  },
   computed: {
     loadedPosts() {
       return this.$store.getters['posts/loadedPosts'];
