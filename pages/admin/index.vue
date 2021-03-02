@@ -1,7 +1,7 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <app-button @click="$router.push('/admin/new-post')">Create Post</app-button>
+      <app-button @click="$router.push('/admin/new-post')">Create Post [{{ appMode}}]</app-button>
     </section>
     <section class="existing-posts">
       <h1>Existing Posts
@@ -25,6 +25,9 @@ export default {
   computed: {
     loadedPosts() {
       return this.$store.getters['posts/loadedPosts'];
+    },
+    appMode() {
+      return process.env.MODE;
     }
   },
 }

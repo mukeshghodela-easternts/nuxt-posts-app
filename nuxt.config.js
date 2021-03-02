@@ -22,6 +22,7 @@ export default {
   loading: '~/components/loading.vue',
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~assets/style/main.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -58,4 +59,11 @@ export default {
       baseURL: 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
     }
   },
+  env: {
+    MODE: process.env.NODE_ENV !== 'production' ? 'TEST' : 'LIVE'
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  }
 }
