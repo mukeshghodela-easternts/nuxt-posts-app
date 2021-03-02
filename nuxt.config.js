@@ -12,7 +12,14 @@ export default {
       {rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Langar&display=swap"}
     ]
   },
-
+  // This option lets you customize the loading component that Nuxt.js uses by default.
+  // loading: {
+  //   color: '#6CC417',
+  //   height: '7px',
+  //   duration: 5000,
+  //   failedColor: 'red'
+  // },
+  loading: '~/components/loading.vue',
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],

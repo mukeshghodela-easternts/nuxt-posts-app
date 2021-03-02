@@ -62,6 +62,9 @@ export default {
       //   .catch((e) => console.log(e));
     },
   },
+  head: {
+    title: "Post new post"
+  }
 };
 </script>
 
