@@ -14,6 +14,7 @@ import AdminPostForm from "@/components/admin/AdminPostForm";
 export default {
   name: "index.vue",
   layout: "admin",
+  middleware: ["check-auth", "auth"],
   components: { AdminPostForm },
   async asyncData({
     isDev,
@@ -43,7 +44,7 @@ export default {
         .dispatch("posts/editPost", {
           ...editedPost,
           updatedDate: new Date().toLocaleString(),
-          id: this.$route.params.postId
+          id: this.$route.params.postId,
         })
         .then((res) => {
           this.$router.push("/admin");
@@ -63,8 +64,8 @@ export default {
     },
   },
   head: {
-    title: "Post new post"
-  }
+    title: "Post new post",
+  },
 };
 </script>
 

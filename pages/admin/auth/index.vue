@@ -37,14 +37,13 @@ export default {
   },
   methods: {
     onSubmit() {
-      let authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.FIREBASE_API_KEY}`;
-      if (!this.isLogin) {
-        authUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.FIREBASE_API_KEY}`;
-      }
-      this.$axios
-        .$post(authUrl, this.loginModel)
+      this.$store
+        .dispatch("posts/authenticateUser", {
+          ...this.loginModel,
+          isLogin: this.isLogin,
+        })
         .then((res) => {
-          console.log("signup RES", res);
+          this.$router.push("/admin");
         })
         .catch((e) => console.log(e));
     },

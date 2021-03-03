@@ -9,7 +9,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet', href:"https://fonts.googleapis.com/css2?family=Langar&display=swap"}
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Langar&display=swap" }
     ]
   },
   // This option lets you customize the loading component that Nuxt.js uses by default.
@@ -54,9 +54,9 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   },
-   /*
-   ** Runtime Config
-   */
+  /*
+  ** Runtime Config
+  */
 
   publicRuntimeConfig: {
     // axios: {
@@ -72,6 +72,6 @@ export default {
     mode: 'out-in'
   },
   router: {
-    middleware: 'log'
+    // middleware: 'log'
   }
 }
