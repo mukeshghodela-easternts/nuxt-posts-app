@@ -68,6 +68,7 @@ export const actions = {
                     "expirationDate",
                     new Date().getTime() + Number.parseInt(result.expiresIn) * 1000
                 );
+                return this.$axios.post('http://localhost:3000/api/track-data', { data: 'Successfully Authenticataed' })
             })
             .catch(e => console.log(e));
     },
@@ -89,7 +90,6 @@ export const actions = {
                 .split(";")
                 .find(c => c.trim().startsWith("expirationDate="))
                 .split("=")[1];
-            console.log(+expirationDate);
         } else {
             token = localStorage.getItem("token");
             expirationDate = localStorage.getItem("tokenExpiration");

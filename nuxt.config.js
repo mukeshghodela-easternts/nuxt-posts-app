@@ -73,5 +73,8 @@ export default {
   },
   router: {
     // middleware: 'log'
-  }
+  },
+  serverMiddleware: [
+    '~/api'
+  ]
 }
