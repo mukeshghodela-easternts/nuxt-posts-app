@@ -1,16 +1,19 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'nuxt-posts-app',
+    title: "nuxt-posts-app",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Langar&display=swap" }
-    ]
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Langar&display=swap",
+      },
+    ],
   },
   // This option lets you customize the loading component that Nuxt.js uses by default.
   // loading: {
@@ -19,44 +22,39 @@ export default {
   //   duration: 5000,
   //   failedColor: 'red'
   // },
-  loading: '~/components/loading.vue',
+  loading: "~/components/loading.vue",
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '~assets/style/main.css'
-  ],
+  css: ["~assets/style/main.css"],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    '~plugins/core-components.js',
-    '~plugins/date-filter.js'
-  ],
+  plugins: ["~plugins/core-components.js", "~plugins/date-filter.js"],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    "@nuxtjs/pwa",
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.BASE_URL || 'https://nuxt-posts-app-default-rtdb.firebaseio.com/'
+    baseURL:
+      process.env.BASE_URL ||
+      "https://nuxt-posts-app-default-rtdb.firebaseio.com/",
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-  },
+  build: {},
   /*
-  ** Runtime Config
-  */
+   ** Runtime Config
+   */
 
   publicRuntimeConfig: {
     // axios: {
@@ -64,17 +62,15 @@ export default {
     // }
   },
   env: {
-    MODE: process.env.NODE_ENV !== 'production' ? 'TEST' : 'LIVE',
-    FIREBASE_API_KEY: 'AIzaSyA6f2-ID576TJnZP1zkCf3caG9p96ySXwg',
+    MODE: process.env.NODE_ENV !== "production" ? "TEST" : "LIVE",
+    FIREBASE_API_KEY: "AIzaSyA6f2-ID576TJnZP1zkCf3caG9p96ySXwg",
   },
   transition: {
-    name: 'fade',
-    mode: 'out-in'
+    name: "fade",
+    mode: "out-in",
   },
   router: {
     // middleware: 'log'
   },
-  serverMiddleware: [
-    '~/api'
-  ]
-}
+  serverMiddleware: ["~/api"],
+};
